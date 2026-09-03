@@ -1,0 +1,149 @@
+		-----PROMPT ENGINEERING HANDS ON----
+
+
+Structured Prompt:
+	Role: You are a QA  Automation Engineer responsible for validating the flight search and selection functionality.
+	Context: The applicating allows the users to search the flight by providing the Departure city, Destination city, Departure date, number of 	passengers and travel class. After submitting the search, the system should display matching available flights and allow the user to select one.
+ 	Task: To generate functional test cases for searching and selecting flights
+	Input : 1.Form city
+		2.To city
+		3.Departure Date
+		4.Number of Passengers
+		5.Travel class
+	Constraints: 1.Include only functional, negative test cases
+		     2.Form and To city must be different
+		     3. Date of departure must be valid
+		     4. Number of passengers should be positive number
+		     5. Travel class must be supported option
+		     6. Verify that user can select available flight
+	Output: Test case id, Scenarios, Test steps, expected results, Important edge cases
+
+
+2. Zero-shot:
+	Role: Act as a senior playwright automation engineer.
+	Task: Generate functional, Negative and Boundary test cases for a flight search feature where user can enter Form City, To City, Departure Date, 	Number of Passengers, Travel Class  preference. The system should display available flights based on the entered criteria and allow the user to 	select a flight.
+
+3. One-shot
+	Role: Act as a senior playwright automation engineer.
+	Task: Generate functional, Negative and Boundary test cases for a flight search feature where user can enter Form City, To City, Departure Date, 	Number of Passengers, Travel Class  preference. The system should display available flights based on the entered criteria and allow the user to 	select a flight.
+	Example: Generate functional test cases for the flight search feature based on the given requirements.
+	
+	Output:
+		Test Case: Enter valid Form City, To City, Departure Date, Number of Passengers, and Travel Class
+		Expected Results: Available flight should be displayed.
+		Test Case: Leave From City blank and search.
+		Expected Results: Appropriate validation message should be shown.
+	Now generate the remaining important functional, Negative and Boundary test cases.
+
+4. Few shot
+	Role: Act as a senior playwright automation engineer.
+	Task: Generate functional test cases for a flight booking system where a user can search feature where user can enter Form City, To City, Departure 	Date, Number of Passengers, Travel Class  preference. The system should display available flights based on the entered criteria and allow the user 	to select a flight.
+	
+	Example 1:
+		   Requirement: User enters valid form and To City, Departure Date, Number of 	Passengers, Travel Class  preference.
+		   Expected Output: Available flight should be displayed.
+	Example 2:
+		   Requirements: Leave From City blank and search.
+		   Expected Output: Appropriate validation message should be shown.
+	Example 3:
+		   Requirements: User selects a past departure date.
+		   Expected Output: Appropriate validation message should be shown.
+	
+	Now generate remaining important functional, Negative and Boundary test cases.
+
+5. Chain-of-Thoughts:
+	Role: Act as a senior playwright automation engineer.
+	Task: Generate functional test cases for a flight booking system where a user can search feature where user can enter Form City, To City, Departure 	Date, Number of Passengers, Travel Class  preference. The system should display available flights based on the entered criteria and allow the user 	to select a flight.
+	Step 1:  Identify the Positive and Negative test scenarios for each input field - Form City, To City, Departure Date, Number of Passengers, Travel 		 Class  preference.
+	Step 2: Analyze boundary and validation conditions for each field.
+	Step 3: Verify system correctly displays the available flights based on the entered criteria.
+	step 4: Verify the user can successfully select the available flight
+	Step 5: Consider important integration and usability scenarios, Such as no available dates, same from and to city , invalid passenger count etc.
+
+	Bases on the scenarios provide Test case id, Scenarios, Test steps, expected results, Important edge cases
+	Explain the reasons behind the identified scenarios before presenting the final test cases.
+
+	Expected Output: Derive test cases covering field validation, positive and negative test scenarios, boundary conditions, flight-search results and 	flight selection rather than just generating a generic lift of test cases.
+
+6. Self Consistent Prompting
+	Role: Act as a Senior QA Automation Engineer, Test Architect, and Flight Booking Domain Expert with extensive experience in Functional Testing, 	Boundary Value Analysis (BVA), Equivalence Partitioning (EP), Negative Testing, Integration Testing, and Playwright Automation Framework Design.
+
+	Context: You are responsible for analyzing a Flight Booking Search feature and deriving comprehensive functional test scenarios and test cases. Your 	goal is to think systematically, validate coverage, and ensure that all business requirements, user interactions, field validations, and integration 	points are tested.
+
+	Instructions: Follow the steps below before generating test cases:
+
+	Step 1:
+	Analyze each input field individually:
+	- From City
+	- To City
+	- Departure Date
+	- Number of Passengers
+	- Travel Class Preference
+
+	For each field identify:
+	- Positive scenarios
+	- Negative scenarios
+	- Boundary conditions
+	- Validation rules
+	- Edge cases
+
+	Step 2:
+	Explain the reasoning behind every identified scenario:
+	- Why the scenario is needed
+	- What business rule it validates
+	- What risk it mitigates
+
+	Step 3:
+	Identify field-level validations including:
+	- Mandatory field validation
+	- Data format validation
+	- Invalid value validation
+	- Business rule validation
+
+	Step 4:
+	Identify combination and integration scenarios involving multiple fields together.
+
+	Examples:
+	- Same From and To City
+	- No flights available
+	- Passenger count exceeding seat availability
+	- Travel class unavailable
+	- Invalid date combinations
+	- Search modification after results display
+
+	Step 5:
+	Analyze flight search functionality:
+	Verify that search results correctly reflect:
+	- Origin
+	- Destination
+	- Date
+	- Passenger count
+	- Travel class
+
+	Step 6:
+	Analyze flight selection functionality:
+	Verify:
+	- User can select a valid flight
+	- User is navigated successfully
+	- Selected flight details are retained
+	- Availability is revalidated before booking
+
+	Step 7:
+	Perform a self-consistency check and ensure complete coverage of:
+	Positive scenarios, Negative scenarios, Boundary Value Analysis, Equivalence Partitioning, Field validations, Business validations, Integration 	scenarios, Search result validation, Flight selection validation, Usability scenarios, Error handling scenarios, Real-world edge cases
+
+	Step 8:
+	Remove duplicate test cases and merge overlapping scenarios.
+
+
+
+	Constraints:
+	1. Do not assume business rules that are not explicitly defined.
+	2. Clearly mention assumptions wherever required.
+	3. Cover both happy path and failure path scenarios.
+	4. Include real-world airline booking edge cases.
+	5. Avoid duplicate test cases.
+	6. Prioritize high-risk scenarios.
+	7. Ensure test cases are suitable for Playwright automation.
+
+	Expected Output: Derive test cases covering field validation, positive and negative test scenarios, boundary conditions, flight-search results and 	flight selection rather than just generating a generic lift of test cases.
