@@ -1,0 +1,517 @@
+
+
+TEST PLAN
+Demo Web Shop
+Web E-Commerce Application
+
+
+Document ID	TP-DWS-001
+Version	1.0
+Date	02-09-2026
+Prepared By	QA Team
+Reviewed By	QA Lead / Test Manager
+Status	Draft
+
+Application URL: https://demowebshop.tricentis.com/login
+Prepared for functional, end-to-end, regression, UI, compatibility, API, performance and automation planning.
+ 
+1. Document Information
+Field	Details
+Project Name	Demo Web Shop QA Validation
+Application Name	Demo Web Shop
+Document Name	Test Plan
+Document ID	TP-DWS-001
+Version	1.0
+Date	02-09-2026
+Prepared By	QA Team
+Reviewed By	QA Lead / Test Manager
+Approved By	Project / Product Stakeholder
+Document Status	Draft
+
+2. Document Revision History
+Version	Date	Author	Description of Change	Reviewer	Approval
+1.0	02-09-2026	QA Team	Initial Test Plan	QA Lead	Pending
+
+3. Project Overview
+3.1 Project Description
+Demo Web Shop is a web-based e-commerce application used for demonstrating and validating online shopping workflows. The application provides customer-facing capabilities including registration, authentication, product discovery, shopping cart, wishlist, account management and ordering-related workflows.
+3.2 Business Objective
+The objective is to validate that core e-commerce journeys operate reliably and consistently, from customer registration and product discovery through cart management and checkout, while providing an acceptable user experience across supported browsers.
+3.3 Application Overview
+The publicly accessible application exposes categories such as Books, Computers, Electronics, Apparel & Shoes, Digital Downloads, Jewelry and Gift Cards, along with search, recently viewed products, product comparison, wishlist, shopping cart and account-related capabilities. The login page also provides registration, login, remember-me and forgot-password entry points.
+Source: current public Demo Web Shop login page.
+3.4 Testing Objective
+●	Verify that business-critical customer workflows behave according to their expected behavior.
+●	Identify functional defects, usability issues, validation gaps and regression defects.
+●	Validate positive, negative, boundary and end-to-end scenarios.
+●	Validate browser compatibility and responsive behavior for supported environments.
+●	Validate critical integrations and APIs when suitable endpoints/access are available.
+●	Assess performance characteristics under agreed test conditions.
+●	Provide objective evidence for release readiness and stakeholder sign-off.
+4. Scope of Testing
+4.1 In Scope
+Module	Features / Scenarios
+Registration	New customer registration, mandatory fields, field validation, duplicate/invalid data
+Login & Authentication	Valid/invalid login, logout, remember-me, forgot-password flow
+Product Catalog	Categories, product listing, product details, navigation
+Search & Discovery	Product search, search validation, recently viewed products
+Product Interaction	Wishlist, product comparison, reviews/ratings where available
+Shopping Cart	Add, remove, quantity update, cart totals, persistence
+Checkout	Customer/address details, shipping/payment workflow, order placement where enabled
+My Account	Account information, addresses, orders and related customer functions
+Customer Service	Contact Us, information pages, shipping/returns and related navigation
+UI & Compatibility	Cross-browser, responsive behavior, usability and basic accessibility checks
+Regression	Retest impacted functionality after fixes and releases
+Automation	Playwright-based smoke, regression and critical E2E scenarios
+
+4.2 Out of Scope
+Feature / Area	Reason
+Production payment processing	Use of real payment instruments is not appropriate for a test/demo environment.
+Real customer PII	Only fictitious or approved test data will be used.
+Production infrastructure validation	No production infrastructure ownership/access is assumed.
+Deep database testing	Database validation requires approved database credentials/access.
+Source-code-level unit testing	Unit tests are owned by the development team and are outside this QA system-test plan.
+Third-party systems not exposed for testing	Testing will be limited to integrations and interfaces that are accessible and approved.
+Destructive security testing	Only controlled security validation is planned; intrusive penetration testing requires authorization.
+
+5. Test Items
+Test Item	Description	Version / Status
+Web Application	Customer-facing Demo Web Shop website	Public demo / current accessible build
+UI Components	Forms, navigation, product, cart and checkout UI	Current accessible build
+Browser Client	Supported desktop/mobile browsers	To be validated
+APIs / Services	Backend endpoints supporting application workflows	Access to be confirmed
+Database	Application persistence layer	Access to be confirmed; not assumed
+
+6. Testing Types
+6.1 Functional Testing
+●	Functional Testing
+●	Smoke Testing
+●	Sanity Testing
+●	System Testing
+●	Integration Testing
+●	Regression Testing
+●	End-to-End Testing
+●	User Acceptance Testing
+●	Negative Testing
+●	Boundary / Validation Testing
+●	Exploratory Testing
+6.2 Non-Functional Testing
+●	Performance Testing
+●	Load Testing
+●	Stress Testing where authorized
+●	Security Validation
+●	Compatibility Testing
+●	Usability Testing
+●	Accessibility Testing
+●	Reliability Testing
+●	Responsive Testing
+6.3 Technical Testing
+●	UI Testing
+●	API Testing where endpoints are available
+●	Database Testing where access is provided
+●	Cross-browser Testing
+●	Automation Testing
+7. Test Approach / Test Strategy
+7.1 Test Approach
+Testing will follow a risk-based and layered approach. Business-critical flows will receive priority, beginning with smoke validation of application availability and critical navigation. Functional scenarios will then be executed using positive, negative, boundary and exploratory techniques. Defect fixes will be followed by targeted retesting and regression testing.
+7.2 Manual Testing
+●	Requirement and acceptance-criteria validation
+●	Exploratory testing
+●	Usability testing
+●	Ad-hoc scenarios
+●	New or changed functionality
+●	Negative and boundary scenarios
+●	Defect verification
+●	Release validation
+7.3 Automation Testing
+●	Playwright with TypeScript for UI automation
+●	Smoke suite for build validation
+●	Regression suite for stable repetitive scenarios
+●	Critical end-to-end customer journeys
+●	Cross-browser execution
+●	Data-driven scenarios where appropriate
+●	CI execution through Jenkins/GitHub Actions where configured
+●	Allure/HTML reporting for execution evidence
+7.4 API Testing
+API testing will be performed with Postman for available and authorized endpoints. Validation will cover status codes, response structure, required fields, error handling, positive/negative inputs and basic integration behavior. API automation may be introduced if stable endpoints and authentication details are provided.
+7.5 Database Testing
+Database validation is conditional on approved database access. Where access is available, QA will validate critical persistence such as customer records, cart/order information and data consistency without modifying production data.
+8. Test Environment
+Environment Component	Planned Details
+Application	https://demowebshop.tricentis.com/login
+Execution Environment	QA workstation / controlled test environment
+Operating Systems	Windows 10/11; additional OS as available
+Browsers	Google Chrome, Microsoft Edge, Mozilla Firefox; Safari where available
+Browser Versions	Latest stable and selected supported versions
+Mobile / Responsive	Android/iOS browsers or device emulation as available
+Network	Stable internet connection; controlled network where required
+API Environment	To be confirmed based on accessible endpoints
+Database	To be confirmed; requires authorized access
+Automation Runtime	Node.js + TypeScript + Playwright
+
+9. Test Data Requirements
+Data Type	Purpose	Example / Guidance
+Valid User	Positive registration/login	qa.user01@example.test
+Invalid User	Negative authentication	invalid.user@example.test
+Password Variants	Validation and negative tests	Valid, invalid, blank, boundary values
+Product Data	Catalog/cart scenarios	Available products from catalog
+Cart Data	Quantity and pricing scenarios	Single and multiple products
+Address Data	Checkout/address validation	Fictitious address data
+Order Data	Order placement/history	Test orders only
+Search Data	Search validation	Exact, partial, invalid and empty terms
+Boundary Data	Field validation	Minimum, maximum, below/above limits
+
+Test data must be fictitious or explicitly approved. Real sensitive customer information must not be used.
+10. Test Case Management
+Field	Details
+Test Case Tool	Jira / TestRail / Azure DevOps / controlled Excel repository
+Test Case Format	ID, module, scenario, precondition, steps, data, expected result, priority, status
+Test Case Review	Required before execution
+Traceability	Required for agreed requirements/scenarios
+Naming Convention	TC_<MODULE>_<SEQUENCE>, e.g., TC_LOGIN_001
+
+Test Case Status: Not Run | Pass | Fail | Blocked | Not Applicable | Deferred
+11. Requirements Traceability
+Each approved requirement or business scenario should map to one or more test cases.
+Requirement ID	Requirement / Business Scenario	Example Test Case ID	Result
+REQ-001	Customer registration	TC_REG_001	Not Run
+REQ-002	Customer login	TC_LOGIN_001	Not Run
+REQ-003	Product search	TC_SEARCH_001	Not Run
+REQ-004	Add product to cart	TC_CART_001	Not Run
+REQ-005	Checkout / order placement	TC_CHECKOUT_001	Not Run
+
+12. Entry Criteria
+●	Scope and requirements are approved or sufficiently baselined.
+●	Application is accessible and a testable build is available.
+●	Required test environment and browser setup are available.
+●	Required test data is prepared.
+●	Test cases are reviewed and prioritized.
+●	Required tools and access are available.
+●	Critical dependencies are resolved or accepted.
+13. Exit Criteria
+●	Planned test cases have been executed or formally deferred.
+●	Critical/Blocker defects are resolved or formally accepted.
+●	High-priority defects have an agreed disposition.
+●	Required regression testing is complete.
+●	No unresolved blocker prevents release assessment.
+●	Test coverage and execution metrics are documented.
+●	Test summary and release recommendation are prepared.
+●	Stakeholder sign-off is obtained.
+14. Suspension Criteria
+●	Application is unavailable for meaningful testing.
+●	Critical workflow is completely blocked.
+●	Environment is unstable or repeatedly unavailable.
+●	Required test data/access is unavailable.
+●	A build defect prevents meaningful execution.
+15. Resumption Criteria
+●	Blocking defects are resolved or workaround is approved.
+●	Stable build is deployed.
+●	Environment and required access are restored.
+●	Required test data is available.
+●	Dependencies are resolved.
+16. Defect Management
+16.1 Defect Lifecycle
+New → Assigned → Open → Fixed → Retest → Verified → Closed
+Additional statuses may include Reopened, Rejected, Duplicate, Deferred, Cannot Reproduce and Won't Fix.
+16.2 Defect Severity
+Severity	Description
+Critical	Business-critical functionality is unavailable or application cannot be meaningfully used.
+High	Major functionality is significantly impacted.
+Medium	Functionality is partially impacted with an available workaround.
+Low	Minor functional, UI or cosmetic issue with limited impact.
+
+16.3 Defect Priority
+Priority	Description
+P1	Immediate fix required
+P2	High priority; fix in current release where feasible
+P3	Normal priority
+P4	Low priority / backlog
+
+17. Defect Report Template
+Field	Required Information
+Defect ID	BUG-<module>-<sequence>
+Summary	Clear concise defect title
+Module	Affected application module
+Environment	Browser, OS, application environment
+Severity / Priority	Critical/High/Medium/Low and P1-P4
+Preconditions	Required setup
+Steps to Reproduce	Numbered reproducible steps
+Test Data	Relevant test data
+Expected Result	Expected behavior
+Actual Result	Observed behavior
+Evidence	Screenshot/video/logs
+Reported / Assigned To	Responsible QA/developer
+Status	Current lifecycle status
+
+18. Roles and Responsibilities
+Role	Responsibility
+Test Manager	Overall test planning, risk management, monitoring and reporting
+QA Lead	Test strategy, review, coordination and quality governance
+QA Engineer	Test design, execution, defect reporting and retesting
+Automation Engineer	Playwright framework, scripts, maintenance and CI execution
+Developer	Defect analysis, correction and technical support
+Business Analyst	Requirement clarification and acceptance criteria
+Product Owner	Business validation and release acceptance
+DevOps	Environment, deployment and CI/CD support
+
+19. Tools
+Purpose	Planned Tool
+Test Management	Jira / TestRail / Azure DevOps
+UI Automation	Playwright with TypeScript
+API Testing	Postman
+Performance Testing	Apache JMeter
+Version Control	Git / GitHub
+CI/CD	Jenkins / GitHub Actions
+Defect Tracking	Jira
+Reporting	Allure / HTML reports
+
+20. Automation Strategy
+20.1 Automation Scope
+●	Smoke tests
+●	Regression tests
+●	Repetitive functional scenarios
+●	Critical business workflows
+●	Cross-browser scenarios
+●	Data-driven scenarios
+●	Stable end-to-end customer journeys
+20.2 Automation Framework
+Component	Technology
+Language	TypeScript
+UI Automation	Playwright
+API Automation	Playwright APIRequest / approved API tooling
+Test Runner	Playwright Test
+Reporting	Allure / Playwright HTML report
+CI/CD	Jenkins / GitHub Actions
+Version Control	Git / GitHub
+
+Automation scripts will use stable locators, reusable fixtures/utilities, controlled test data, clear assertions and failure evidence such as screenshots, traces and videos where configured.
+21. AI-Assisted Testing Strategy
+AI may be used as an accelerator, but all AI-generated test assets must be reviewed and approved by a qualified tester.
+AI Use Case	Planned Usage
+Requirement Analysis	Identify scenarios, ambiguity and missing acceptance conditions
+Test Scenario Generation	Generate candidate positive, negative and boundary scenarios
+Test Case Generation	Draft test cases for reviewer validation
+Test Data Generation	Generate fictitious data and edge cases
+Automation Code Assistance	Assist with Playwright TypeScript scripts
+Risk-Based Testing	Identify high-risk workflows and regression candidates
+Defect Analysis	Summarize symptoms and suggest investigation areas
+Failure Analysis	Assist in identifying likely automation/application causes
+Test Reporting	Assist with summaries and metrics
+
+21.1 AI Validation
+AI outputs are advisory. QA must verify correctness against the application, approved requirements, test evidence and security/privacy rules before incorporating them into final test assets.
+22. Risk and Mitigation
+Risk ID	Risk	Probability	Impact	Mitigation
+R-001	Public demo environment instability or downtime	Medium	High	Schedule execution flexibly; capture environment failures; retry after stability is restored.
+R-002	Application behavior changes without notice	Medium	High	Run smoke checks before suites and maintain version/date evidence.
+R-003	Requirements or expected behavior unclear	Medium	High	Document assumptions and obtain stakeholder clarification before sign-off.
+R-004	Test data unavailable or becomes invalid	Medium	Medium	Maintain reusable fictitious test data and data-generation approach.
+R-005	Automation locator/UI changes	Medium	Medium	Use resilient locators, page objects and regular maintenance.
+R-006	Third-party/dependent service unavailable	Medium	High	Identify dependency failures separately and use approved mocks/stubs where applicable.
+R-007	Performance results affected by shared public infrastructure	High	High	Treat results as indicative unless a controlled performance environment is provided.
+R-008	Security testing performed without authorization	Low	High	Limit testing to approved non-intrusive checks and obtain authorization for penetration testing.
+R-009	Browser/device differences	Medium	Medium	Execute critical flows across agreed browser/device matrix.
+R-010	Incomplete API/database access	Medium	Medium	Mark inaccessible layers as conditional scope and avoid unsupported assumptions.
+
+23. Assumptions
+●	The publicly accessible Demo Web Shop remains available during planned execution.
+●	Expected behavior can be derived from available application functionality and approved requirements.
+●	Only approved/fictitious test data will be used.
+●	Required browsers and automation runtime can be installed on the QA workstation.
+●	API and database testing are conditional on authorized access.
+●	Performance results from a public demo environment are not treated as production capacity benchmarks.
+●	Stakeholders will review defects and release risks within the agreed timeline.
+24. Dependencies
+Dependency	Owner	Status
+Application availability	Application / Environment Owner	To be monitored
+Test data	QA	Planned / Ready
+API availability and documentation	Development	To be confirmed
+Database access	DBA / Development	Conditional
+Browser/device availability	QA / Infrastructure	Planned
+CI/CD execution environment	DevOps	Conditional
+Defect tracking access	QA / Project Team	To be confirmed
+
+25. Test Schedule
+Activity	Start	End	Owner	Status
+Requirement / Application Analysis	02-09-2026	02-09-2026	QA	Planned
+Test Planning	02-09-2026	03-09-2026	QA Lead	Planned
+Test Scenario & Case Design	03-09-2026	05-09-2026	QA	Planned
+Test Data Preparation	04-09-2026	05-09-2026	QA	Planned
+Environment / Tool Setup	03-09-2026	05-09-2026	QA / DevOps	Planned
+Smoke & Functional Execution	07-09-2026	11-09-2026	QA	Planned
+Defect Fix / Retest Cycle	08-09-2026	14-09-2026	QA / Development	Planned
+Regression / Cross-browser	11-09-2026	15-09-2026	QA	Planned
+Automation Execution	14-09-2026	16-09-2026	Automation QA	Planned
+Test Closure & Reporting	17-09-2026	18-09-2026	QA Lead	Planned
+
+26. Test Metrics
+26.1 Test Execution Metrics
+●	Total Test Cases
+●	Executed Test Cases
+●	Passed Test Cases
+●	Failed Test Cases
+●	Blocked Test Cases
+●	Not Run Test Cases
+●	Pass Percentage
+●	Fail Percentage
+●	Requirement Coverage
+26.2 Defect Metrics
+●	Total Defects
+●	Critical / High / Medium / Low Defects
+●	Open vs Closed Defects
+●	Reopened Defects
+●	Defect Aging
+●	Defect Leakage
+26.3 Automation Metrics
+●	Total Automated Tests
+●	Automation Coverage %
+●	Automation Pass Rate
+●	Automation Failure Rate
+●	Flaky Test Count
+●	Average Execution Time
+27. Test Execution Summary
+Metric	Count	Percentage
+Total Test Cases	[ ]	100%
+Executed	[ ]	[ ]%
+Passed	[ ]	[ ]%
+Failed	[ ]	[ ]%
+Blocked	[ ]	[ ]%
+Not Run	[ ]	[ ]%
+
+28. Test Deliverables
+28.1 Before Testing
+●	Approved Test Plan
+●	Test Strategy
+●	Requirement Traceability Matrix
+●	Test Scenarios
+●	Test Cases
+●	Test Data
+●	Automation Plan
+●	Environment Readiness Checklist
+28.2 During Testing
+●	Test Execution Results
+●	Defect Reports
+●	Daily/Weekly Status Reports
+●	Automation Reports
+●	Test Logs
+●	Risk / Issue Updates
+28.3 After Testing
+●	Regression Test Results
+●	Test Summary Report
+●	Defect Summary
+●	Requirement Coverage Report
+●	Final Test Metrics
+●	Release Recommendation
+●	Sign-off Document
+29. Communication and Reporting
+Report	Frequency	Audience	Owner
+Daily Test Status	Daily	QA / Project Team	QA Lead
+Defect Report	As required	QA / Development	QA
+Test Execution Report	Daily / Weekly	Stakeholders	QA Lead
+Risk Report	Weekly / As required	Project Team	Test Manager
+Test Summary Report	End of testing	Stakeholders	QA Lead
+
+30. Test Summary / Closure
+At closure, the following will be documented:
+●	Overall execution status
+●	Requirement coverage
+●	Pass/fail statistics
+●	Open defects
+●	Critical outstanding issues
+●	Known limitations
+●	Production/release risks
+●	Automation coverage
+●	Overall quality assessment
+●	Release recommendation
+30.1 Release Recommendation
+Recommendation	Selection
+Ready for Release	☐
+Ready with Known Issues	☐
+Not Ready for Release	☐
+
+Comments: ________________________________________________________________________________
+31. Approval / Sign-Off
+Role	Name	Signature	Date	Status
+Test Manager	________________	________________	____________	Pending
+QA Lead	________________	________________	____________	Pending
+Project Manager	________________	________________	____________	Pending
+Product Owner	________________	________________	____________	Pending
+
+32. Appendix
+32.1 References
+●	Demo Web Shop application: https://demowebshop.tricentis.com/login
+●	Application functionality reviewed from the publicly accessible Demo Web Shop UI.
+●	Test case repository / requirements repository: to be linked after project setup.
+●	Automation framework documentation: to be linked after framework setup.
+32.2 Suggested Browser Matrix
+Browser	Desktop	Priority
+Google Chrome	Windows 10/11	High
+Microsoft Edge	Windows 10/11	High
+Mozilla Firefox	Windows 10/11	Medium
+Safari	macOS/iOS where available	Medium
+Chrome Mobile	Android	Medium
+Safari Mobile	iOS	Medium
+
+32.3 Glossary
+Term	Meaning
+QA	Quality Assurance
+E2E	End-to-End
+RTM	Requirements Traceability Matrix
+SUT	System Under Test
+UAT	User Acceptance Testing
+CI/CD	Continuous Integration / Continuous Delivery
+P1-P4	Defect priority levels
+
+
+— End of Test Plan —
+ 
+Prompt
+TEST DATA DESIGN PROMPT
+ 
+Act as a Senior QA Test Data Engineer.
+ 
+Design a comprehensive synthetic test-data strategy for the Tricentis Demo Web Shop.
+ 
+Generate data categories for:
+ 
+- Registration
+- Login
+- Search
+- Products
+- Quantities
+- Customer profiles
+- Addresses
+- Wishlist
+- Compare
+- Cart
+- Checkout
+- Gift Cards
+- Newsletter
+- Poll
+- Negative testing
+- Boundary testing
+ 
+For each data set define:
+ 
+Data ID
+Purpose
+Field
+Valid Example
+Invalid Example
+Boundary Example
+Special Character Example
+Expected Use
+Data Lifecycle
+Cleanup Requirement
+ 
+Do not use real customer information, credentials or payment details.
+ 
+Clearly separate:
+Positive Data
+Negative Data
+Boundary Data
+Security Data
+Automation Data
+Performance Data
+has context menu
+
