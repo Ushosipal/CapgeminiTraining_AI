@@ -1,0 +1,294 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "student-registration;register-student-using-multiple-datasets",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Register student using multiple datasets",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1694324800
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2608098100
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User is on Student Registration page",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:60"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 11403188400
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User fills registration form with \"User1\" \"user1@test.com\" \"Male\" \"9876543210\" \"2000-01-15\" \"Maths\" \"Sports\" \"Demo Address\" \"NCR\" \"Meerut\"",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:66"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3045877199
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User submits the registration form",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:83"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 461999
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Registration should be successful",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:89"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 278036799
+            },
+            "keyword": "After",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1115799
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@studentRegistration",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "student-registration;register-student-using-multiple-datasets",
+        "keyword": "Scenario Outline",
+        "line": 13,
+        "name": "Register student using multiple datasets",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1533591700
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2533611600
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User is on Student Registration page",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:60"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16322244599
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User fills registration form with \"User2\" \"user2@test.com\" \"Female\" \"9123456789\" \"2001-05-20\" \"English\" \"Reading\" \"Demo Address\" \"Haryana\" \"Lucknow\"",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:66"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3036787100
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User submits the registration form",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:83"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 493300
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Registration should be successful",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:89"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 253326400
+            },
+            "keyword": "After",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 785699
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@studentRegistration",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "student-registration;register-student-using-multiple-datasets",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "name": "Register student using multiple datasets",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1392996400
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1801141799
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User is on Student Registration page",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:60"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 16291698399
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User fills registration form with \"User3\" \"user3@test.com\" \"Other\" \"9988776655\" \"1999-09-10\" \"Physics\" \"Music\" \"Demo Address\" \"Rajasthan\" \"Agra\"",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:66"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3000396100
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "User submits the registration form",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:83"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 315100
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Registration should be successful",
+            "match": {
+              "location": "features\\stepDefinitions\\loginSteps.ts:89"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 234817100
+            },
+            "keyword": "After",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1637000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@studentRegistration",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "student-registration",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Student Registration",
+    "tags": [
+      {
+        "name": "@studentRegistration",
+        "line": 1
+      }
+    ],
+    "uri": "features\\studentRegistration.feature"
+  }
+]
